@@ -35,7 +35,7 @@ function about() {
         "Baby Bear",
         "Waiter<br>" +
         "555-555-5556<br>" +
-        "totallyRealEmail@notFake.com",
+        "babytotallyRealEmail@notFake.com",
         ""
     );
 
