@@ -63,6 +63,11 @@ header {
     background-color: #ffcc33;
 }
 
+.menu-button.active {
+    background-color: brown;
+    color: white;
+}
+
 .home-title {
     color: brown;
     background-color: #ffde73;
@@ -74,12 +79,24 @@ header {
     border-radius: 50px;
 }
 
+.home-sub-title {
+    color: white;
+    background-color: #c16a08;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+    padding: 10px 0px;
+    border: solid 10px #c16a08;
+    border-radius: 50px;
+}
+
 .home-section {
     display: flex;
     background-color: #ffc60b;
     flex-direction: column;
     align-items: center;
-    padding: 20px 150px;
+    padding: 20px 70px;
     margin: 20px 20px 0px 20px;
     border: solid 10px #c16a08;
     border-radius: 50px;
@@ -90,4 +107,5 @@ header {
     font-size: 1.5em;
     font-weight: bold;
 }
+
 

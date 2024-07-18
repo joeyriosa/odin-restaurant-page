@@ -1,20 +1,38 @@
 import './style.css';
 
-function home() {
-    // // Build Navigation buttons.
-    // const header = document.querySelector('header');
-    // const nav = header.querySelector('nav');
-    // const buttonNames = ['Home', 'Menu', 'About'];
+function createSectionItem(title, text, price) {
+    const beverageDiv = document.createElement('div');
+    beverageDiv.classList.add('home-section');
 
-    // buttonNames.forEach(name => {
-    //     const button = document.createElement('button');
-    //     button.textContent = name;
-    //     button.classList.add('menu-button');
-    //     nav.appendChild(button);
-    // });
+    if (title !== '') {
+        const beverageTitle = document.createElement('div');
+        beverageTitle.classList.add('home-section-title');
+        beverageTitle.innerHTML = title;
+        beverageDiv.appendChild(beverageTitle);
+    }
+
+    if (text !== '') {
+        const beverageText = document.createElement('div');
+        beverageText.classList.add('home-section-text');
+        beverageText.innerHTML = text;
+        beverageDiv.appendChild(beverageText);
+    }
+
+    if (price !== '') {
+        const beveragePrice = document.createElement('div');
+        beveragePrice.classList.add('home-section-title');
+        beveragePrice.innerHTML = price;
+        beverageDiv.appendChild(beveragePrice);
+    }
+
+    return beverageDiv;
+}
+
+function home() {
 
     // Build div content title
     const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = "";
     const homeTitle = document.createElement('div');
     homeTitle.classList.add('home-title');
     homeTitle.textContent = 'Beary Breakfast Bar';
@@ -22,62 +40,37 @@ function home() {
     contentDiv.appendChild(homeTitle);
 
     // Build section 1.
-    const section1Div = document.createElement('div');
-    section1Div.classList.add('home-section');
-
-    const section1TextDiv = document.createElement('div');
-    section1TextDiv.classList.add('home-section-text');
-    section1TextDiv.textContent = "Beary's has the best porridge! The atmosphere and customer service make you feel " +
-                "like you are sitting in the middle of the woods, eating like a bear! "
-                "This is exactly the kind of place that I like to return to again and again.";
-    section1Div.appendChild(section1TextDiv);
-
-    const section1TitleDiv = document.createElement('div');
-    section1TitleDiv.textContent = '- Goldilocks';
-    section1TitleDiv.classList.add('home-section-title');
-    section1Div.appendChild(section1TitleDiv);
+    const section1Div = createSectionItem(
+        "",
+        "Beary's has the best porridge! The atmosphere and customer service make you feel " +
+                "like you are sitting in the middle of the woods, eating like a bear! " +
+                "This is exactly the kind of place that I like to return to again and again.",
+        "- Goldilocks"
+    );
 
     contentDiv.appendChild(section1Div);
 
-    // Build section 2.
-    const section2Div = document.createElement('div');
-    section2Div.classList.add('home-section');
-
-    const section2TitleDiv = document.createElement('div');
-    section2TitleDiv.classList.add('home-section-title');
-    section2TitleDiv.textContent = 'Hours';
-    section2Div.appendChild(section2TitleDiv);
-
-    const section2TextDiv = document.createElement('div');
-    section2TextDiv.classList.add('home-section-text');
-    let hoursText = "Sunday: 8am - 8pm<br>" +
+    const section2Div = createSectionItem(
+        "Hours",
+        "Sunday: 8am - 8pm<br>" +
                 "Monday: 6am - 6pm <br>" +
                 "Tuesday: 6am - 6pm <br>" +
                 "Wednesday: 6am - 6pm <br>" +
                 "Thursday: 6am - 10pm <br>" +
                 "Friday: 6am - 10pm <br>" +
-                "Saturday: 8am - 10pm <br>"
-
-    section2TextDiv.innerHTML = hoursText;
-    section2Div.appendChild(section2TextDiv);
-    
+                "Saturday: 8am - 10pm <br>",
+        ""
+    );
     contentDiv.appendChild(section2Div);
 
     // Build section 3.
-    const section3Div = document.createElement('div');
-    section3Div.classList.add('home-section');
-
-    const section3TitleDiv = document.createElement('div');
-    section3TitleDiv.classList.add('home-section-title');
-    section3TitleDiv.textContent = 'Location';
-    section3Div.appendChild(section3TitleDiv);
-
-    const section3TextDiv = document.createElement('div');
-    section3TextDiv.classList.add('home-section-text');
-    section3TextDiv.textContent = '123 Forest Drive Forestville, Maine';
-    section3Div.appendChild(section3TextDiv);
-
+    const section3Div = createSectionItem(
+        "Location",
+        "123 Forest Drive Forestville, Maine",
+        ""
+    );
     contentDiv.appendChild(section3Div);
 }
 
 export { home };
+export { createSectionItem };
